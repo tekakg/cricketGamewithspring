@@ -1,7 +1,6 @@
-package com.spring.cricketGamewithspring.services;
+package com.spring.cricketGamewithspring.helper;
 
-import com.spring.cricketGamewithspring.entities.Player;
-import com.spring.cricketGamewithspring.services.Ball;
+import com.spring.cricketGamewithspring.model.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,25 +10,30 @@ public class Team {
     private int totalPlayers;
     public List<Player> listOfPlayers = new ArrayList<>();
     //public int playerNumber;
-    public List<Ball> BattingBalls = new ArrayList<>();//when Team is batting.
-    public List<Ball> BowlingBalls = new ArrayList<>();// when Team is balling.
+//    public List<Ball> BattingBalls = new ArrayList<>();//when Team is batting.
+//    public List<Ball> BowlingBalls = new ArrayList<>();// when Team is balling.
     private int score;
     private int wicket;
     public int overNumber;
     public int ballNumber;
 
-    public void setTotalPlayers(int val)
-    {
-        this.totalPlayers=val;
+    public Team(String teamName, int totalPlayers, List<Player> listOfPlayers) {
+        this.teamName = teamName;
+        this.totalPlayers = totalPlayers;
+        this.listOfPlayers = listOfPlayers;
     }
-    public int getTotalPlayers()
-    {
-        return totalPlayers;
-    }
-    public void createTeam() {
-    }
+
+    //    public void setTotalPlayers(int val)
+//    {
+//        this.totalPlayers=val;
+//    }
+//    public int getTotalPlayers()
+//    {
+//        return totalPlayers;
+//    }
+
     public Player getNewBatsman(Player nonStriker) {
-        Player nwPlayer=null;
+        Player nwPlayer = null;
         for (Player player : listOfPlayers) {
             if (player.outOrNot == false && player != nonStriker) {
                 {
@@ -59,7 +63,8 @@ public class Team {
     public int getFinalScore() {
         return this.score;
     }
-    public int getWicket(){
+
+    public int getWicket() {
         return this.wicket;
     }
 

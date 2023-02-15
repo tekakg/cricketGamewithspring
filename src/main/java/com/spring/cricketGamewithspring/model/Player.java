@@ -1,12 +1,12 @@
-package com.spring.cricketGamewithspring.entities;
+package com.spring.cricketGamewithspring.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-import java.util.Scanner;
 @Entity
+@Table(name="_Player")
 public class Player {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String name;
     private String role;
@@ -15,7 +15,20 @@ public class Player {
     private int wickets;
     private int BallsBowled;
     public boolean outOrNot;
+    public Player()
+    {
 
+    }
+    public Player(String name,String role)
+    {
+        this.name=name;
+        this.role=role;
+        this.run=0;
+        this.BallsFaced=0;
+        this.wickets=0;
+        this.BallsBowled=0;
+        this.outOrNot=false;
+    }//Creating player object
 
     public String getname() {
 

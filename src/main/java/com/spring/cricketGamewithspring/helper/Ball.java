@@ -1,9 +1,8 @@
-package com.spring.cricketGamewithspring.services;
+package com.spring.cricketGamewithspring.helper;
 
-import com.spring.cricketGamewithspring.entities.Player;
+import com.spring.cricketGamewithspring.model.Player;
 
 public class Ball {
-
     private int overNumber;
     private int ballNumber;
     private Player bowler;
